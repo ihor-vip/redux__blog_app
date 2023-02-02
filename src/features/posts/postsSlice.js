@@ -103,13 +103,12 @@ const postsSlice = createSlice({
                     hooray: 0,
                     heart: 0,
                     rocket: 0,
-                    eyes: 0
+                    coffee: 0
                 }
                 console.log(action.payload)
                 state.posts.push(action.payload)
             })
-    }
-})
+    }})
 
 export const selectAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
