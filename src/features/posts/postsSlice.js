@@ -100,23 +100,23 @@ const postsSlice = createSlice({
                 action.payload.date = new Date().toISOString();
                 action.payload.reactions = {
                     thumbsUp: 0,
-                    wow: 0,
+                    hooray: 0,
                     heart: 0,
                     rocket: 0,
-                    coffee: 0
+                    eyes: 0
                 }
                 console.log(action.payload)
                 state.posts.push(action.payload)
             })
-    }})
+    }
+})
 
 export const selectAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
 
-export const selectPostById = (state, postId) => {
+export const selectPostById = (state, postId) =>
     state.posts.posts.find(post => post.id === postId);
-}
 
 export const {postAdded, reactionAdded} = postsSlice.actions
 
