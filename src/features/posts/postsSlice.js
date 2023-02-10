@@ -3,7 +3,7 @@ import {
     createEntityAdapter
 } from "@reduxjs/toolkit";
 import { sub } from 'date-fns';
-import {apiSlice} from "../api/apiSlice";
+import { apiSlice } from "../api/apiSlice";
 
 const postsAdapter = createEntityAdapter({
     sortComparer: (a, b) => b.date.localeCompare(a.date)
@@ -137,6 +137,8 @@ export const {
     useAddReactionMutation
 } = extendedApiSlice
 
+
+
 // returns the query result object
 export const selectPostsResult = extendedApiSlice.endpoints.getPosts.select()
 
@@ -153,5 +155,3 @@ export const {
     selectIds: selectPostIds
     // Pass in a selector that returns the posts slice of state
 } = postsAdapter.getSelectors(state => selectPostsData(state) ?? initialState)
-
-
